@@ -1,5 +1,5 @@
 {% set name = "ipyaggrid" %}
-{% set version = "0.3.2" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ipyaggrid-{{ version }}.tar.gz
-  sha256: dd5dae3abb02a21df801dbeae474624fb3cdd06ec9e6fdcd4b0217b569e97bed
+  sha256: ba7c15fb18d0f17f298dbfc82b50d12782acf52cec0d3f7e696a9381cf3e5d03
 
 build:
   noarch: python
