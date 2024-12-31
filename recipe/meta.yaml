@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ipyaggrid-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ipyaggrid-{{ version }}.tar.gz
   sha256: e2e4c5902e97c9c24c688cb2176876fa60e62545605b5804c9f6b563655df029
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - jupyter_packaging >=0.7.9
     - jupyterlab >=3.0.0,<4.0.0
     - setuptools >=40.8.0
     - wheel
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - ipywidgets >=7.4.0
     - pandas
     - simplejson >=3.13.2
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/widgetti/ipyaggrid
